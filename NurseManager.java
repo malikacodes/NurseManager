@@ -2,6 +2,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class NurseManager { // NurseManager is a class that manages nurses and their patients
+  public static final String DEPARTMENT = "Cardiology";
+
+  public static void showDepartmentInfo() {
+    System.out.println("Welcome to the " + DEPARTMENT + " department " + "All nurses operate in this department.");
+  }
 
   ArrayList<String> patients = new ArrayList<>();
 
@@ -74,9 +79,23 @@ public class NurseManager { // NurseManager is a class that manages nurses and t
 
   public void admitPatient() {
     Scanner scanner = new Scanner(System.in);
+
     System.out.println("Enter patient name and status (e.g., Kira - Critical): ");
     String ptName = scanner.nextLine();
+
     patients.add(ptName);
     System.out.println("Admitted: " + ptName);
+  }
+
+  public void admitPatient(String ptName, String status) {
+    String formatted = ptName + " - " + status;
+    patients.add(formatted);
+    System.out.println("Admitted: " + formatted);
+  }
+
+  public void admitPatient(String ptName) {
+    String formatted = ptName + " - Unknown Status";
+    patients.add(formatted);
+    System.out.println("Admitted: " + formatted);
   }
 }

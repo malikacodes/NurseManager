@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class NurseManager { // NurseManager is a class that manages nurses and their patients
-  public static final String DEPARTMENT = "Cardiology";
+public class NurseManager { // instance of StaffMember
+  public static final String DEPARTMENT = "Cardiology"; // example of static variable
 
-  public static void showDepartmentInfo() {
+  public static void showDepartmentInfo() { // example of static method
     System.out.println("Welcome to the " + DEPARTMENT + " department " + "All nurses operate in this department.");
   }
 
-  ArrayList<String> patients = new ArrayList<>();
+  ArrayList<String> patients = new ArrayList<>(); // example of array list
 
   {
     patients.add("John - Stable");
@@ -61,7 +61,6 @@ public class NurseManager { // NurseManager is a class that manages nurses and t
 
   public void dischargePatient(String ptName) {
     boolean removed = false; // removed is a boolean variable that is used to check if the patient has been
-                             // removed
 
     for (int i = 0; i < patients.size(); i++) {
       if (patients.get(i).startsWith(ptName)) {
@@ -77,6 +76,7 @@ public class NurseManager { // NurseManager is a class that manages nurses and t
     }
   }
 
+  // Example of method overloading
   public void admitPatient() {
     Scanner scanner = new Scanner(System.in);
 
@@ -98,4 +98,5 @@ public class NurseManager { // NurseManager is a class that manages nurses and t
     patients.add(formatted);
     System.out.println("Admitted: " + formatted);
   }
+
 }

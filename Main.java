@@ -11,5 +11,9 @@ public class Main {
     manager.listPatients();
     manager.admitPatient("Kira");
     manager.admitPatient("James", "Critical");
+
+    Nurse nurse = new Nurse("Malika", "N001");
+    nurse.showInfo();
+    nurse.doRounding();
   }
 }
